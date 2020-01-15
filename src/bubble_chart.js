@@ -108,8 +108,8 @@ function bubbleChart() {
     var myNodes = rawData.map(function (d) {
       return {
         id: d.id,
-        // radius: radiusScale(+d.total_amount),
-        // value: +d.total_amount,
+        radius: radiusScale(+d.total_amount),
+        value: +d.total_amount,
         name: d.name,
         age: d.age,
         manner: d.manner,
@@ -174,7 +174,7 @@ function bubbleChart() {
     // correct radius
     bubbles.transition()
       .duration(2000)
-      // .attr('r', function (d) { return d.radius; });
+      .attr('r', function (d) { return d.radius; });
 
     // Set the simulation's nodes to our newly created nodes array.
     // @v4 Once we set the nodes, the simulation will start running automatically!
